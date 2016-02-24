@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
+    "webmodules-jqtag": ">=0.0.0",
     "spamjs-view" : "~0.0.14"
   }
 }
