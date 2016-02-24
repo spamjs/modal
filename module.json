@@ -1,0 +1,8 @@
+{
+	"name": "spamjs/modal",
+	"spamjs/modal": {
+		"js": ["spamjs.modal.js"],
+    "html" : ["modal.html"],
+		"on": ["webmodules/bootstrap","spamjs/view"]
+	}
+}

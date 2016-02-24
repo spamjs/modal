@@ -1,0 +1,26 @@
+{
+  "name": "spamjs-modal",
+  "version": "0.0.0",
+  "homepage": "https://github.com/spamjs/modal",
+  "authors": [
+    "Lalit Tanwar <lalit.tanwar07@gmail.com>"
+  ],
+  "description": "modal popup for spamjs",
+  "main": "spamjs.modal.js",
+  "keywords": [
+    "x-editable",
+    "pitana",
+    "spamjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "spamjs-view" : "~0.0.14"
+  }
+}
