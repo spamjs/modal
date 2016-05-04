@@ -1,6 +1,5 @@
 {
   "name": "spamjs-modal",
-  "version": "0.0.0",
   "homepage": "https://github.com/spamjs/modal",
   "authors": [
     "Lalit Tanwar <lalit.tanwar07@gmail.com>"
@@ -22,6 +21,6 @@
   ],
   "dependencies": {
     "webmodules-jqtag": ">=0.0.0",
-    "spamjs-view" : "~0.0.14"
+    "spamjs-view" : "~0.1.0"
   }
 }
