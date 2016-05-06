@@ -111,8 +111,8 @@ define({
         _module_(moduleName,function(MODULE){
           self.instance({
             id: e.target.id,
-            modalClass : e.target.getAttribute("modalClass"),
             options: {
+              modalClass : e.target.getAttribute("modalClass"),
               title: e.target.title,
               module: MODULE.instance({
                 options: e.target.dataset
