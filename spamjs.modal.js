@@ -104,7 +104,6 @@ define({
       return _dfd_.promise();
     },
     _ready_ : function(){
-      console.error("_ready_");
       var self = this;
       jQuery("body").on("click","spamjs-modal,[spamjs-modal]", function(e){
         var moduleName = e.target.getAttribute("spamjs-modal") || e.target.getAttribute("module");
@@ -112,6 +111,7 @@ define({
         _module_(moduleName,function(MODULE){
           self.instance({
             id: e.target.id,
+            modalClass : e.target.getAttribute("modalClass"),
             options: {
               title: e.target.title,
               module: MODULE.instance({
