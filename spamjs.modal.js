@@ -1,8 +1,8 @@
 define({
   name: "spamjs.modal",
   extend: "spamjs.view",
-  modules: ["jqtag"]
-}).as(function(modal, jqtag) {
+  modules: ["jqtag","jQuery"]
+}).as(function(modal, jqtag,jQuery) {
 
   /**
    *       this.add(modal.instance({
@@ -102,8 +102,25 @@ define({
         });
       });
       return _dfd_.promise();
-
+    },
+    _ready_ : function(){
+      console.error("_ready_");
+      var self = this;
+      jQuery("body").on("click","spamjs-modal,[spamjs-modal]", function(e){
+        var moduleName = e.target.getAttribute("spamjs-modal") || e.target.getAttribute("module");
+        var $view = $(e.target).closest("[view-uuid]");
+        _module_(moduleName,function(MODULE){
+          self.instance({
+            id: e.target.id,
+            options: {
+              title: e.target.title,
+              module: MODULE.instance({
+                options: e.target.dataset
+              })
+            }
+          }).addTo($view);
+        });
+      });
     }
   };
-
 });
