@@ -16,14 +16,18 @@ define({
    */
   return {
     events: {
-      // "hidden.bs.modal #myModal" : "modalClosed"
+      // "hidden.bs.modal #myModal" : "modalClosed",
+      "click .modal-button" : "modal_button_clicked"
     },
     _init_: function() {
       var self = this;
 
       var dfd = $.Deferred();
 
-      this.$$.loadView(this.path("modal.html"), this.options).done(function() {
+      this.$$.loadTemplate(this.path("modal.html"), this.options).done(function() {
+        self.model({
+          buttons : self.options.buttons
+        })
         if (is.String(self.options.module)) {
           module(self.options.module, function(embedModule) {
             self.add("#module-body", embedModule.instance(self.options.moduleOptions));
@@ -49,6 +53,12 @@ define({
         });
       });
       return dfd.promise();
+    },
+    modal_button_clicked : function(e, target,data){
+      console.error("modal_button_clicked");
+      if(this.model().buttons){
+        this.trigger("spamjs.model.button.click",this.model().buttons[target.getAttribute('index')-0]);
+      }
     },
     _remove_: function() {
       console.error("helo", this.$$.find("#myModal"), this.$modal);
