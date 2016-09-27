@@ -124,7 +124,7 @@ define({
             id: e.target.getAttribute("module-id"),
             options: {
               modalClass : e.target.getAttribute("modal-class"),
-              title: e.target.title,
+              title: e.target.getAttribute("modal-title") || e.target.title,
               module: MODULE.instance({
                 options: e.target.dataset
               })
