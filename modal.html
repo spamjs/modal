@@ -15,10 +15,15 @@
             <!-- if(data.buttons && data.buttons.length){ -->
             <div class="modal-footer">
                 <!-- for(var i in data.buttons){ -->
+                    <!-- if(data.buttons[i].dismiss){ -->
+                    <button index="{{i}}" class="modal-button {{data.buttons.buttonClass}}" data-dismiss="modal"
+                            rv-disabled="model.buttons.{{i}}.disabled">{{data.buttons[i].label}}
+                    </button>
+                    <!-- }else{ -->
                     <button index="{{i}}" class="modal-button {{data.buttons.buttonClass}}"
-                            {{data.buttons[i].dismiss ? 'data-dismiss="modal"' : ''}}
-                            rv-disabled="model.buttons.{{i}}.disabled"
-                            >{{data.buttons[i].label}}</button>
+                            rv-disabled="model.buttons.{{i}}.disabled">{{data.buttons[i].label}}
+                    </button>
+                    <!-- } -->
                 <!-- } -->
             </div>
             <!-- } -->
